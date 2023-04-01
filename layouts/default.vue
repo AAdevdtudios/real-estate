@@ -1,8 +1,9 @@
 <template>
   <div class="bd">
-    <Header/>
+    <!-- <Header/> -->
+    design
     <NuxtPage />
-    <Footer/>
+    <!-- <Footer/> -->
   </div>
 </template>
 

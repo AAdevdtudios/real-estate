@@ -1,11 +1,12 @@
 <template>
     <div>
-        <Hero />
+        <h1>Hello</h1>
+        <!-- <Hero />
         <Locations/>
         <product-list/>
         <Testimonials/>
         <cta/>
-        <ContactUs/>
+        <ContactUs/> -->
     </div>
 </template>
 

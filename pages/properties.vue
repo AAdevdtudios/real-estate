@@ -1,5 +1,5 @@
 <template>
     <div>
-        <PropertiesComponentsFilter/>
+        <!-- <PropertiesComponentsFilter/> -->
     </div>
 </template>
