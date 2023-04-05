@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <AboutComponentsHead/>
-        <AboutComponentsGallery/> -->
+        <AboutComponentsHead/>
+        <AboutComponentsGallery/>
     </div>
 </template>

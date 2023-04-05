@@ -8,59 +8,53 @@
           <div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
               <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r">
                   <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500">
-                      <h3 class="text-lg font-semibold text-gray-900">Speechless with how easy this was to integrate</h3>
-                      <p class="my-4">"I recently got my hands on Flowbite Pro, and holy crap, I'm speechless with how easy this was to integrate within my application. Most templates are a pain, code is scattered, and near impossible to theme.</p>
-                      <p class="my-4">Flowbite has code in one place and I'm not joking when I say it took me a matter of minutes to copy the code, customise it and integrate within a Laravel + Vue application.</p>
-                      <p class="my-4">If you care for your time, I hands down would go with this."</p>
+                      <!-- <h3 class="text-lg font-semibold text-gray-900">Speechless with how easy this was to integrate</h3> -->
+                      <p class="my-4">"Working with [Real Estate Company] was an absolute pleasure. Their team was professional, knowledgeable, and responsive. They went above and beyond to help us find our dream home and we couldn't be happier with the results"</p>
                   </blockquote>
                   <figcaption class="flex justify-center items-center space-x-3">
                       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
                       <div class="space-y-0.5 font-medium text-left">
                           <div>Bonnie Green</div>
-                          <div class="text-sm font-light text-gray-500">Developer at Open AI</div>
+                          <!-- <div class="text-sm font-light text-gray-500">Developer at Open AI</div> -->
                       </div>
                   </figcaption>    
               </figure>
               <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12">
                   <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 ">
-                      <h3 class="text-lg font-semibold text-gray-900 ">Solid foundation for any project</h3>
-                      <p class="my-4">"FlowBite provides a robust set of design tokens and components based on the popular Tailwind CSS framework. From the most used UI components like forms and navigation bars to the whole app screens designed both for desktop and mobile, this UI kit provides a solid foundation for any project.</p>
-                      <p class="my-4">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
+                      <!-- <h3 class="text-lg font-semibold text-gray-900 ">Solid foundation for any project</h3> -->
+                      <p class="my-4">"I was blown away by the level of service provided by [Real Estate Company]. They made the buying process so easy and stress-free. Their team was with us every step of the way and made sure we got the best possible deal on our new home"</p>
                   </blockquote>
                   <figcaption class="flex justify-center items-center space-x-3">
                       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
                       <div class="space-y-0.5 font-medium  text-left">
                           <div>Roberta Casas</div>
-                          <div class="text-sm font-light text-gray-500 ">Lead designer at Dropbox</div>
+                          <!-- <div class="text-sm font-light text-gray-500 ">Lead designer at Dropbox</div> -->
                       </div>
                   </figcaption>    
               </figure>
               <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r  ">
                   <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 ">
-                      <h3 class="text-lg font-semibold text-gray-900 ">Mindblowing workflow and variants</h3>
-                      <p class="my-4">"As someone who mainly designs in the browser, I've been a casual user of Figma, but as soon as I saw and started playing with FlowBite my mind was 🤯.</p>
-                      <p class="my-4">Everything is so well structured and simple to use (I've learnt so much about Figma by just using the toolkit).</p>
-                      <p class="my-4">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
+                      <!-- <h3 class="text-lg font-semibold text-gray-900 ">Mindblowing workflow and variants</h3> -->
+                      <p class="my-4">"I can't thank [Real Estate Company] enough for their hard work and dedication in selling my home. They were able to sell it quickly and for a great price. I would recommend them to anyone looking to buy or sell a home."</p>
                   </blockquote>
                   <figcaption class="flex justify-center items-center space-x-3">
                       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
                       <div class="space-y-0.5 font-medium  text-left">
                           <div>Jese Leos</div>
-                          <div class="text-sm font-light text-gray-500 ">Software Engineer at Facebook</div>
+                          <!-- <div class="text-sm font-light text-gray-500 ">Software Engineer at Facebook</div> -->
                       </div>
                   </figcaption>    
               </figure>
               <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-gray-200 md:p-12  ">
                   <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 ">
-                      <h3 class="text-lg font-semibold text-gray-900 ">Efficient Collaborating</h3>
-                      <p class="my-4">"This is a very complex and beautiful set of elements. Under the hood it comes with the best things from 2 different worlds: Figma and Tailwind.</p>
-                      <p class="my-4">You have many examples that can be used to create a fast prototype for your team."</p>
+                      <!-- <h3 class="text-lg font-semibold text-gray-900 ">Efficient Collaborating</h3> -->
+                      <p class="my-4">"As a first-time homebuyer, I was intimidated by the process. But [Real Estate Company] made it so easy. Their team was patient, informative, and always available to answer my questions. I'm so grateful for their help in finding my new home."</p>
                   </blockquote>
                   <figcaption class="flex justify-center items-center space-x-3">
                       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
                       <div class="space-y-0.5 font-medium  text-left">
                           <div>Joseph McFall</div>
-                          <div class="text-sm font-light text-gray-500 ">CTO at Google</div>
+                          <!-- <div class="text-sm font-light text-gray-500 ">CTO at Google</div> -->
                       </div>
                   </figcaption>    
               </figure>

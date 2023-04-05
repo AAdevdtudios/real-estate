@@ -1,6 +1,33 @@
 <template>
     <div>
-        Test
+        <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="news-letter">
+                <div class="content">
+                    <!-- Modal content -->
+                    <div class="grid grid-cols-2 gap-4 sm:grid-cols-2">
+                        <img alt="Laptop"
+                            src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                            class="h-full w-full rounded-xl object-cover" />
+                        <div>
+                            <h2 class="text-lg font-medium">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            </h2>
+
+                            <p class="mt-4 text-sm text-gray-500">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+                                eos. Inventore dolor delectus commodi laudantium adipisci, illum amet
+                                itaque optio!
+                            </p>
+
+                            <div class="mt-6 sm:text-right">
+                                <a href="#"
+                                    class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                                    Find out more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </template>
 

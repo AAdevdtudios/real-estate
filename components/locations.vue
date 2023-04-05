@@ -1,82 +1,101 @@
 <template>
-    <section class="location-section info-section">
-        <span>Best Choices</span>
-        <h3>Our Inventory Location</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-    </svg>
-
-        <Carousel :breakpoints="breakpoints" :transition="500">
-            <Slide v-for="slide in locationList" :key="slide.keyVal">
-                <a href="/" class="carousel__item" :style="{backgroundImage: `url(/images/${slide.image})` }">
-                    <div class="dem">
-                        <span>{{ slide.name }}</span>
-                    </div>
-                </a>
-            </Slide>
-            <template #addons>
-                <Navigation />
-                <Pagination />
-            </template>
-        </Carousel>
-    </section>
+  <section class="location-section">
+    <ContentHeader name="Best Choices" secondary="Our Inventory Location" :item-number="itemNumber" url="/properties">
+      <template #buttons-List>
+        <button class="btn-control anim" :disabled="itemNumber == 0 ? true : false"
+          @click="() => itemNumber == 0 ? itemNumber = 0 : --itemNumber">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+        <button class="btn-control anim" :disabled="itemNumber == locationList.length - 1 ? true : false"
+          @click="() => itemNumber == locationList.length - 1 ? itemNumber = 2 : ++itemNumber">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+          </svg>
+        </button>
+      </template>
+    </ContentHeader>
+    <Carousel :breakpoints="breakpoints" :transition="500" v-model="itemNumber">
+      <Slide v-for="slide in locationList" :key="slide.keyVal">
+        <nuxtLink :to="'/properties?location=' + slide.name" class="carousel__item"
+          :style="{ backgroundImage: `url(/images/${slide.image})` }">
+          <div class="dem">
+            <span>{{ slide.name }}</span>
+          </div>
+        </nuxtLink>
+      </Slide>
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+  </section>
 </template>
 
 <script lang="ts" setup>
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-interface LocationMap{
-    name: string,
-    image: string,
-    keyVal: number
+const itemNumber = ref<number>(0)
+
+
+interface LocationMap {
+  name: string,
+  image: string,
+  keyVal: number
 }
 
-const locationList: LocationMap[]= [
-    {
-        name: "Lagos",
-        image: "obinna-okerekeocha-fGd8paHzN98-unsplash.jpg",
-        keyVal: 1
-    },
-    {
-        name: "Ibadan",
-        image: "babatunde-olajide-q4ZBGVzJskE-unsplash.jpg",
-        keyVal: 2
-    },
-    {
-        name: "Lekki",
-        image: "nupo-deyon-daniel-9ySEZ-ugtJA-unsplash.jpg",
-        keyVal: 3
-    },
+const locationList: LocationMap[] = [
+  {
+    name: "Lagos",
+    image: "obinna-okerekeocha-fGd8paHzN98-unsplash.jpg",
+    keyVal: 1
+  },
+  {
+    name: "Ibadan",
+    image: "babatunde-olajide-q4ZBGVzJskE-unsplash.jpg",
+    keyVal: 2
+  },
+  {
+    name: "Lekki",
+    image: "nupo-deyon-daniel-9ySEZ-ugtJA-unsplash.jpg",
+    keyVal: 3
+  },
 ]
 
 const breakpoints: Record<string, any> = {
-    // 700px and up
-    700: {
-        itemsToShow: 1,
-        wrapAround: false,
-        snapAlign: 'center',
-    },
-    // 1024 and up
-    1024: {
-        itemsToShow: 3.95,
-        wrapAround: true,
-    }
+  // 700px and up
+  700: {
+    itemsToShow: 1,
+    wrapAround: false,
+    snapAlign: 'center',
+  },
+  // 1024 and up
+  1024: {
+    itemsToShow: 3.95,
+    wrapAround: true,
+  }
 }
 
 </script>
 
 <style scoped>
-.carousel__item{
-    @apply h-[400px] w-full text-red-900 rounded-md justify-center items-center bg-cover bg-center
+.carousel__item {
+  @apply h-[400px] w-full text-red-900 rounded-md justify-center items-center bg-cover bg-center z-0
 }
-.carousel__slide{
-    @apply p-5
+
+.carousel__slide {
+  @apply p-5 z-0
 }
+
 .carousel__prev,
-.carousel__next{
-    @apply box-content border-2 border-yellow-500 bg-gray-700 rounded-full
+.carousel__next {
+  @apply box-content border-2 border-yellow-500 bg-gray-700 rounded-full
 }
+
 .carousel__slide {
   padding: 5px;
 }
@@ -88,6 +107,7 @@ const breakpoints: Record<string, any> = {
 .carousel__track {
   transform-style: preserve-3d;
 }
+
 .carousel__slide--sliding {
   transition: 0.5s;
 }
@@ -97,7 +117,7 @@ const breakpoints: Record<string, any> = {
   transform: rotateY(-20deg) scale(0.9);
 }
 
-.carousel__slide--active ~ .carousel__slide {
+.carousel__slide--active~.carousel__slide {
   transform: rotateY(20deg) scale(0.9);
 }
 
@@ -114,5 +134,9 @@ const breakpoints: Record<string, any> = {
 .carousel__slide--active {
   opacity: 1;
   transform: rotateY(0) scale(1.1);
+}
+
+.btn-control {
+  @apply border border-orange-400 px-1 md:px-3 md:py-2 rounded-lg hover:bg-orange-400 hover:text-white disabled:border-gray-600 disabled:hover:bg-gray-500 disabled:hover:text-white
 }
 </style>

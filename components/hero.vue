@@ -1,6 +1,6 @@
 <template>
     <div class="hero">
-        <img class="hero-img" src="~/assets/images/building.jpg" alt="">
+        <!-- <img class="hero-img" src="~/assets/images/building.jpg" alt=""> -->
         <div class="hero-content">
             <div class="content-left">
                 <h1>Find the perfect <br> place to Live <br> with your family</h1>
@@ -20,55 +20,74 @@
                     </li>
                 </ul>
             </div>
-            <div>
-            </div>
             <div class="search">
                 <ul class="btn-list">
-                    <button class="active">All</button>
-                    <button>Rent</button>
-                    <button>Houses</button>
+                    <button  v-for="(btn, index) in searchItem" :key="index" :class="btn.active? 'active': ''" @click="changeVal(index)">{{btn.name}}</button>
                 </ul>
-                <div class="input-items">
-                    <div class="input-body">
-                        <div class="icon">
-                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 22H22" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M2.9502 22.0003L3.0002 9.97023C3.0002 9.36023 3.2902 8.78029 3.7702 8.40029L10.7702 2.95027C11.4902 2.39027 12.5002 2.39027 13.2302 2.95027L20.2302 8.39028C20.7202 8.77028 21.0002 9.35023 21.0002 9.97023V22.0003"
-                                    stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round" />
-                                <path opacity="0.4"
-                                    d="M15.5 11H8.5C7.67 11 7 11.67 7 12.5V22H17V12.5C17 11.67 16.33 11 15.5 11Z"
-                                    stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M10 16.25V17.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path opacity="0.4" d="M10.5 7.5H13.5" stroke="#292D32" stroke-width="1.5"
-                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                <form @submit.prevent="()=>searchBtn()">
+                    <div class="flex lg:w-[50%] relative overflow-visible">
+                        <div id="dropdown-search-city"
+                            class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 anim"
+                            v-show="btnShow"
+                            style="position: absolute; inset: -16px auto auto 0px; margin: 0px; transform: translate(0px, 72px);"
+                            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
                         </div>
-                        <input type="text" id="input-group-1" class="search-input" placeholder="name@flowbite.com">
+                        <div class="relative w-full">
+                            <input type="search" v-model="searchInput" id="location-search&quot;"
+                                class="block p-4 w-full z-20 text-sm outline-none text-gray-900 bg-gray-50 rounded-b-lg border-l-gray-50 border-l-2 border border-gray-300 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                                placeholder="Search for city or address">
+                            <button type="submit"
+                                class="absolute top-0 right-0 p-4 text-sm font-medium text-white bg-orange-400 rounded-br-lg border border-orange-400 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="searchBtn-list">
-                        <button class="btn-ad">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-                            </svg>
-                            <span>Advance</span>
-                        </button>
-                        <button class="btn-search">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6 text-white">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { searchItem } from "@/control"
+
+const rout = useRouter()
+
+const searchVal = ref<string>();
+const locationVal = ref<string>();
+const searchInput = ref<string>();
+const btnShow = ref<boolean>(false);
+
+function changeVal(val:number){
+    for (let index = 0; index < searchItem.length; index++) {
+        if(searchItem[index].active){
+            searchItem[index].active = false;
+        }
+        searchItem[val].active = true;
+        searchVal.value = searchItem[val].name;
+    }
+}
+
+function activeParams():string{
+    for (let index = 0; index < searchItem.length; index++) {
+        if (searchItem[index].active) {
+            return searchItem[index].name;
+        }
+    }
+}
+
+function searchBtn(){
+    rout.push({
+        path: '/properties',
+        query: {
+            search: searchInput.value,
+            searchType: activeParams(),
+        }
+    })
+}
+</script>
